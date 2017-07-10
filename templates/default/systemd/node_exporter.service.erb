@@ -6,7 +6,7 @@ After=network.target auditd.service
 Type=simple
 User=<%= node['node_exporter']['user'] %>
 Group=<%= node['node_exporter']['group'] %>
-ExecStart=<%= node['node_exporter']['binary'] %>
+ExecStart='<%= node['node_exporter']['binary'] %> 2>&1 > <%= node['node_exporter']['log_dir'] %>/node_exporter.log'
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 
