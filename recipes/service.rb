@@ -29,7 +29,6 @@ case node['node_exporter']['init_style']
     template '/etc/systemd/system/node_exporter.service' do
       source 'systemd/node_exporter.service.erb'
       mode '0644'
-      variables(:sysconfig_file => "/etc/#{conf_dir}/#{env_file}")
       notifies :restart, 'service[node_exporter]', :delayed
     end
 
