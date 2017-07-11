@@ -38,5 +38,4 @@ directory node['node_exporter']['log_dir'] do
   recursive true
 end
 
-include_recipe 'node_exporter::binary'
 include_recipe 'node_exporter::service'
