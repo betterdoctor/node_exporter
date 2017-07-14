@@ -31,11 +31,5 @@ directory node['node_exporter']['dir'] do
   recursive true
 end
 
-directory node['node_exporter']['log_dir'] do
-  owner node['node_exporter']['user']
-  group node['node_exporter']['group']
-  mode '0755'
-  recursive true
-end
-
 include_recipe 'node_exporter::binary'
+include_recipe 'node_exporter::service'

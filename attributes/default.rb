@@ -41,9 +41,6 @@ case node['platform_family']
     default['node_exporter']['init_style']                                                = 'init'
 end
 
-# Location for node_exporter logs
-default['node_exporter']['log_dir']                                                       = '/var/log/node_exporter'
-
 # node_exporter version to build
 default['node_exporter']['version']                                                       = '0.14.0'
 
