@@ -7,7 +7,5 @@ setuid <%= node['node_exporter']['user'] %>
 setgid <%= node['node_exporter']['user'] %>
 
 script
-  exec >> "<%= node['node_exporter']['log_dir'] %>/node_exporter.log"
-  exec 2>&1
   exec <%= node['node_exporter']['binary'] %>
 end script
